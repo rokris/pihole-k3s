@@ -7,16 +7,14 @@ spec:
   selector:
     app: pihole
   ports:
-  - port: 8000
+  - port: 8008
     targetPort: 80
     name: pihole-admin
-  - port: 53
+  - port: 5354
     targetPort: 53
     protocol: TCP
-    name: dns-tcp
-  - port: 53
+    name: pihole-dns-tcp
+  - port: 5353
     targetPort: 53
     protocol: UDP
-    name: dns-udp
-#  externalIPs:
-#  - node1.ip.address
+    name: pihole-dns-udp

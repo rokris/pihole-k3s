@@ -1,0 +1,36 @@
+apiVersion: helm.cattle.io/v1
+kind: HelmChartConfig
+metadata:
+  name: traefik
+  namespace: kube-system
+spec:
+  valuesContent: |-
+    rbac.enabled: true
+    metrics.prometheus.enabled: true
+    kubernetes.ingressEndpoint.useDefaultPublishedService: true
+    ssl:
+      insecureSkipVerify: true
+      enabled: true
+      permanentRedirect: false
+    dashboard:
+      enabled: "true"
+      domain: "traefik.localhost"
+    additionalArguments:
+    - "--entryPoints.tcp-dns.address=:53/tcp"
+    - "--entryPoints.udp-dns.address=:53/udp"
+    ports:
+      udp-dns:
+        port: 53
+        exposedPort: 53
+        expose: true
+        protocol: UDP
+      tcp-dns:
+        port: 53
+        exposedPort: 53
+        expose: true
+        protocol: TCP 
+  entryPoints:
+    udp-dns:
+      address: ':53/udp'
+    tcp-dns:
+      address: ':53/tcp'
