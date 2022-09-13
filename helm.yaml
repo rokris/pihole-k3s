@@ -20,17 +20,17 @@ spec:
     - "--entrypoints.udp-dns.address=:53/udp"
     ports:
       udp-dns:
-        port: 53
-        exposedPort: 53
+        port: 5335
+        exposedPort: 5335
         expose: true
         protocol: UDP
       tcp-dns:
-        port: 53
-        exposedPort: 53
+        port: 5335
+        exposedPort: 5335
         expose: true
         protocol: TCP 
   entryPoints:
     udp-dns:
-      address: ':53/udp'
+      address: ':5335/udp'
     tcp-dns:
-      address: ':53/tcp'
+      address: ':5335/tcp'
