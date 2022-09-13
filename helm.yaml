@@ -1,7 +1,7 @@
 apiVersion: helm.cattle.io/v1
 kind: HelmChartConfig
 metadata:
-  name: traefik
+  name: traefik-proxy
   namespace: kube-system
 spec:
   valuesContent: |-
@@ -16,8 +16,8 @@ spec:
       enabled: "true"
       domain: "traefik.localhost"
     additionalArguments:
-    - "--entryPoints.tcp-dns.address=:53/tcp"
-    - "--entryPoints.udp-dns.address=:53/udp"
+    - "--entrypoints.tcp-dns.address=:53/tcp"
+    - "--entrypoints.udp-dns.address=:53/udp"
     ports:
       udp-dns:
         port: 53

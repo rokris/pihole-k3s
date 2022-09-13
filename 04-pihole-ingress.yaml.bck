@@ -1,17 +1,21 @@
 ---
-apiVersion: traefik.containo.us/v1alpha1
-kind: IngressRoute
+apiVersion: networking.k8s.io/v1
+kind: Ingress
 metadata:
   name: pihole-ingress
+  annotations:
+    kubernetes.io/ingress.class: "traefik"
 spec:
-  entryPoints:
-    - web
-  routes:
-    - match: PathPrefix(`/`)
-      kind: Rule
-      services:
-        - name: pihole
-          port: 8008
+  rules:
+  - http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: pihole
+            port:
+              number: 8008
 ---
 apiVersion: traefik.containo.us/v1alpha1
 kind: IngressRouteTCP
