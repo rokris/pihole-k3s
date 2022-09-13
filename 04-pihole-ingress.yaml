@@ -37,5 +37,5 @@ spec:
   routes:
     - services:
         - name: pihole-dns-udp
-          port: 5353
+          port: 5355
           weight: 10

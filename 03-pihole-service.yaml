@@ -14,7 +14,7 @@ spec:
     targetPort: 53
     protocol: TCP
     name: pihole-dns-tcp
-  - port: 5353
+  - port: 5355
     targetPort: 53
     protocol: UDP
     name: pihole-dns-udp
