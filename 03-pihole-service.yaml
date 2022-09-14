@@ -10,11 +10,7 @@ spec:
   - port: 8008
     targetPort: 80
     name: pihole-admin
-  - port: 5354
-    targetPort: 53
-    protocol: TCP
-    name: pihole-dns-tcp
   - port: 5355
     targetPort: 53
     protocol: UDP
-    name: pihole-dns-udp
+    name: dns-udp
