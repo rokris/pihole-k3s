@@ -16,21 +16,21 @@ spec:
       enabled: "true"
       domain: "traefik.localhost"
     additionalArguments:
-    - "--entrypoints.tcp-dns.address=:5335/tcp"
-    - "--entrypoints.udp-dns.address=:5335/udp"
+    - "--entrypoints.tcp-dns.address=:53/tcp"
+    - "--entrypoints.udp-dns.address=:53/udp"
     ports:
       udp-dns:
-        port: 5335
-        exposedPort: 5335
+        port: 53
+        exposedPort: 53
         expose: true
         protocol: UDP
       tcp-dns:
-        port: 5335
-        exposedPort: 5335
+        port: 53
+        exposedPort: 53
         expose: true
         protocol: TCP 
   entryPoints:
     udp-dns:
-      address: ':5335/udp'
+      address: ':53/udp'
     tcp-dns:
-      address: ':5335/tcp'
+      address: ':53/tcp'
