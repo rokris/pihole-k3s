@@ -23,7 +23,7 @@ spec:
   routes:
     - match: HostSNI(`*`)
       services:
-        - name: pihole-dns-tcp
+        - name: pihole
           port: 5354
           weight: 10
 ---
@@ -36,6 +36,6 @@ spec:
     - udp-dns
   routes:
     - services:
-        - name: pihole-dns-udp
+        - name: pihole
           port: 5355
           weight: 10
