@@ -1,5 +1,5 @@
-kubectl apply -f helm.yaml
-kubectl apply -f 01-pihole-volume.yaml
-kubectl apply -f 02-pihole-deployment.yaml
-kubectl apply -f 03-pihole-service.yaml
-kubectl apply -f 04-pihole-ingress.yaml
+kubectl apply -f 00-helm.yaml \
+              -f 01-pihole-volume.yaml \
+              -f 02-pihole-deployment.yaml \
+              -f 03-pihole-service.yaml \
+              -f 04-pihole-ingress.yaml

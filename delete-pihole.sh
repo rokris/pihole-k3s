@@ -1,5 +1,5 @@
-kubectl delete -f 04-pihole-ingress.yaml
-kubectl delete -f 03-pihole-service.yaml
-kubectl delete -f 02-pihole-deployment.yaml
-kubectl delete -f 01-pihole-volume.yaml
-kubectl delete -f helm.yaml
+kubectl delete -f 04-pihole-ingress.yaml \
+               -f 03-pihole-service.yaml \
+               -f 02-pihole-deployment.yaml \
+               -f 01-pihole-volume.yaml \
+               -f 00-helm.yaml
