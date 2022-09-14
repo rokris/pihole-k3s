@@ -17,6 +17,7 @@ spec:
       domain: "traefik.localhost"
     additionalArguments:
     - "--entrypoints.udp-dns.address=:53/udp"
+    - "--entrypoints.tcp-dns.address=:53/tcp"
     ports:
       udp-dns:
         port: 53

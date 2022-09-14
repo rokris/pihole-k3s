@@ -14,6 +14,20 @@ spec:
           port: 8008
 ---
 apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRouteTCP
+metadata:
+  name: pihole-dns-tcp-ingress
+spec:
+  entryPoints:
+    - tcp-dns
+  routes:
+    - match: HostSNI(`*`)
+      services:
+        - name: pihole
+          port: 5354
+          weight: 10
+---
+apiVersion: traefik.containo.us/v1alpha1
 kind: IngressRouteUDP
 metadata:
   name: pihole-dns-udp-ingress
